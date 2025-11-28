@@ -179,6 +179,9 @@
             line-height: 1.1;
             animation: fadeInUp 0.8s ease;
         }
+        [data-theme="dark"] .hero h1 {
+    color: #ffffff;
+}
         .hero p { 
             font-size: 1.25rem; 
             max-width: 800px; 
@@ -242,7 +245,11 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
-
+[data-theme="dark"] .social-btn {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.3);
+}
         /* Style spécial pour le bouton CV */
         .cv-btn {
             background: var(--accent);
@@ -256,7 +263,9 @@
             border-color: var(--white);
             transform: translateY(-3px) scale(1.05);
         }
-
+[data-theme="dark"] .cv-btn {
+    color: #ffffff;
+}
         /* --- SECTION PROFIL --- */
         .about { 
             padding: 100px 30px; 
@@ -772,7 +781,9 @@
             font-size: 0.85rem;
             opacity: 0.6;
         }
-
+[data-theme="dark"] .copyright {
+    color: #1D1D1F;
+}
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             .nav-container { 
