@@ -18,6 +18,21 @@
             --white: #ffffff;
             --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
             --gradient-hero: linear-gradient(135deg, #004E89 0%, #1A1423 100%);
+             }
+
+        /* --- MODE SOMBRE --- */
+        [data-theme="dark"] {
+            --bg-light: #0D0D0D;
+            --bg-gray: #1A1A1A;
+            --text-dark: #E5E5E5;
+            --text-light: #A0A0A0;
+            --white: #121212;
+            --dark: #E5E5E5;
+            --gradient-hero: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%);
+        }
+
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         * {
