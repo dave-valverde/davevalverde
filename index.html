@@ -793,8 +793,12 @@
 <body>
 
     <header>
-        <div class="nav-container">
-            <div class="logo">Dave VALVERDE</div>
+    <div class="nav-container">
+        <div class="logo">Dave VALVERDE</div>
+        <div style="display: flex; align-items: center; gap: 30px;">
+            <div class="theme-toggle" id="themeToggle">
+                <div class="theme-toggle-slider">🌙</div>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#profil">Profil Hybride</a></li>
@@ -804,7 +808,8 @@
                 </ul>
             </nav>
         </div>
-    </header>
+    </div>
+</header>
 
     <section class="hero">
         <div class="tagline">Disponible immédiatement</div>
@@ -1109,6 +1114,25 @@
 
     <!-- JAVASCRIPT POUR LES ANIMATIONS AU SCROLL -->
     <script>
+        // ====== DARK MODE TOGGLE ======
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const toggleSlider = document.querySelector('.theme-toggle-slider');
+    
+    // Vérifier le thème sauvegardé
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    toggleSlider.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    
+    // Toggle du thème
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        toggleSlider.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
         // Animation au scroll
         const observerOptions = {
             threshold: 0.1,
