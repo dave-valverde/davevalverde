@@ -1329,39 +1329,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
             });
         });
     </script>
-    // ====== POP-UP TÉLÉPHONE ======
-const phoneBtn = document.getElementById('phoneBtn');
-const phoneModal = document.getElementById('phoneModal');
-const closeModal = document.querySelector('.close-modal');
-
-// Ouvrir le pop-up
-phoneBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    phoneModal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Désactiver le scroll
-});
-
-// Fermer avec le X
-closeModal.addEventListener('click', () => {
-    phoneModal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Réactiver le scroll
-});
-
-// Fermer en cliquant en dehors du pop-up
-window.addEventListener('click', (e) => {
-    if (e.target === phoneModal) {
-        phoneModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// Fermer avec la touche Échap
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && phoneModal.style.display === 'block') {
-        phoneModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-});
+   
 <!-- POP-UP TÉLÉPHONE -->
 <div id="phoneModal" class="modal">
     <div class="modal-content">
