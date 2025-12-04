@@ -1085,7 +1085,7 @@
                 Discutons !</p>
             </div>
 
-            <form class="contact-form fade-in" id="contactForm">
+           <form class="contact-form fade-in" action="https://formspree.io/f/mgvgzooy" method="POST">
                 <div class="form-group">
                     <label for="name">Nom complet *</label>
                     <input type="text" id="name" name="name" required placeholder="Jean Dupont">
@@ -1196,34 +1196,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
         // Observer tous les éléments avec la classe fade-in
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Gestion du formulaire de contact
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formMessage = document.getElementById('formMessage');
-            const submitBtn = this.querySelector('.submit-btn');
-            
-            // Simulation d'envoi (tu devras configurer un vrai service)
-            submitBtn.textContent = 'Envoi en cours...';
-            submitBtn.disabled = true;
-            
-            // Simuler un délai d'envoi
-            setTimeout(() => {
-                formMessage.textContent = '✅ Message envoyé avec succès ! Je vous répondrai dans les 24h.';
-                formMessage.className = 'form-message success';
-                formMessage.style.display = 'block';
-                
-                // Réinitialiser le formulaire
-                this.reset();
-                submitBtn.textContent = 'Envoyer le message';
-                submitBtn.disabled = false;
-                
-                // Masquer le message après 5 secondes
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            }, 1500);
-        });
+      
 
         // Smooth scroll pour les liens d'ancrage
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
